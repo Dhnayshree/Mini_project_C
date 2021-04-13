@@ -54,7 +54,7 @@ const char* calculate_Ceaser_Plain_Text(char str[], int sk1)
         {
             str[i] = str[i] - sk1;
 
-            if(str[i]>'Z')
+            if(str[i]<'A')
             str[i] = str[i] + 'Z' - 'A' + 1;
         }
     }
