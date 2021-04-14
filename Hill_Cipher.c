@@ -1,4 +1,5 @@
 #include<stdio.h>
+
 #include<stdlib.h>
 #include<time.h>
 #include<string.h>
@@ -42,12 +43,15 @@ int main()
         key[i] = Generate_Secret_Key_2();
     }
     //key[i]='\0';
+    strcpy(Mess.sk2,key);
 
-    strcpy(str, Generate_ds_Cipher(str, key));
-    printf("Ceaser text : %s\n",str);
+    printf("Key 2 : %s\n",Mess.sk2);
 
-    /*strcpy(str,calculate_Ceaser_Plain_Text(str, Mess.sk1));
-    printf("Generated Plain Text : %s\n", str);*/
+    strcpy(str, Generate_ds_Cipher(str, Mess.sk2));
+    printf("2nd Ecrypted text : %s\n",str);
+
+    strcpy(str,Generate_ds_Cipher(str, Mess.sk2));
+    printf("Generated Plain Text : %s\n", str);
 
     return 0;
 }
