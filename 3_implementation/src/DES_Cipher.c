@@ -14,7 +14,7 @@ struct Box
 char Generate_Secret_Key_2()
 {
     srand(time(NULL));
-    return ((char)(rand()%100));
+    return ((char)(rand()/65));
 }
 
 const char* Generate_ds_Cipher(char str[], char key[] )
@@ -55,5 +55,6 @@ int main()
 
 
     _CrtDumpMemoryLeaks();
+
     return 0;
 }
