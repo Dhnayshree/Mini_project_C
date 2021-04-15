@@ -3,13 +3,6 @@
 #include<time.h>
 #include<string.h>
 
-struct Box
-{
-    char text[100];
-    int sk1;
-    char sk2[100];
-};
-
 int Generate_Secret_Key_1()
 {
     srand(time(NULL));

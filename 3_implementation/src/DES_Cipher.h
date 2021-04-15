@@ -1,19 +1,26 @@
-#include "DES_Cipher.h"
-#include "Ceaser_Cipher.h"
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 #include<string.h>
+#include<crtdbg.h>
 
-struct Box
+char Generate_Secret_Key_2()
 {
-    char text[100];
-    int sk1;
-    char sk2[100];
-};
+    srand(time(NULL));
+    return ((char)(rand()/65));
+}
 
-int main()
+const char* Generate_ds_Cipher(char str[], char key[] )
+{
+    char en[100];
+    
+    for(int i=0; str[i]!='\0';i++)
+    str[i] = str[i] ^ key[i];
+
+    return str;
+}
+
+/*int main()
 {
     struct Box Mess;
     char str[100];
@@ -22,12 +29,6 @@ int main()
     fgets(str,sizeof(str),stdin);
 
     strcpy(Mess.text, str);
-
-    Mess.sk1 = Generate_Secret_Key_1();
-    printf("%d\n", Mess.sk1);
-
-    strcpy(str, Generate_Ceaser_Cipher(str, Mess.sk1));
-    printf("Ceaser text : %s\n",str);
 
     char key[100]; int i;
     for(i=0; str[i]!='\0'; i++)
@@ -40,13 +41,13 @@ int main()
     printf("Key 2 : %s\n",Mess.sk2);
 
     strcpy(str, Generate_ds_Cipher(str, Mess.sk2));
-    printf("2nd Ecrypted text : %s\n",str);
+    printf("2nd Ecrypted text : %s\n",Mess.sk2);
 
     strcpy(str,Generate_ds_Cipher(str, Mess.sk2));
-    printf("Generated Plain Text from DES : %s\n", str);
+    printf("Generated Plain Text : %s\n", str);
 
-    strcpy(str,calculate_Ceaser_Plain_Text(str, Mess.sk1));
-    printf("Generated Plain Text from Ceaser : %s\n", str);
- 
+
+    _CrtDumpMemoryLeaks();
+
     return 0;
-}
+}*/

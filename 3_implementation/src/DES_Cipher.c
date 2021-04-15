@@ -27,7 +27,7 @@ const char* Generate_ds_Cipher(char str[], char key[] )
     return str;
 }
 
-int main()
+/*int main()
 {
     struct Box Mess;
     char str[100];
@@ -57,4 +57,4 @@ int main()
     _CrtDumpMemoryLeaks();
 
     return 0;
-}
+}*/
