@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<time.h>
 #include<string.h>
+#include<crtdbg.h>
 
 struct Box
 {
@@ -13,7 +14,7 @@ struct Box
 char Generate_Secret_Key_2()
 {
     srand(time(NULL));
-    return ((char)(rand()%10));
+    return ((char)(rand()%100));
 }
 
 const char* Generate_ds_Cipher(char str[], char key[] )
@@ -52,5 +53,7 @@ int main()
     strcpy(str,Generate_ds_Cipher(str, Mess.sk2));
     printf("Generated Plain Text : %s\n", str);
 
+
+    _CrtDumpMemoryLeaks();
     return 0;
 }
