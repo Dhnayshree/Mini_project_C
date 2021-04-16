@@ -4,13 +4,13 @@
 #include<string.h>
 #include<crtdbg.h>
 
-char Generate_Secret_Key_2()
+char Generate_Secret_Key_2()        //To generte a single character for the entire text message length
 {
-    srand(time(NULL));
-    return ((char)(rand()/65));
+    srand(time(NULL));          //generates a new number every second without any repetations
+    return ((char)(rand()/65));     //convert the digit to its respective character
 }
 
-const char* Generate_ds_Cipher(char str[], char key[] )
+const char* Generate_ds_Cipher(char str[], char key[] )     //This takes the org text message and XORs it with the generated secret key message.
 {
     char en[100];
     
