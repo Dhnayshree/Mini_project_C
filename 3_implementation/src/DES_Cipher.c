@@ -4,13 +4,6 @@
 #include<string.h>
 #include<crtdbg.h>
 
-/*struct Box
-{
-    char text[100];
-    int sk1;
-    char sk2[100];
-};*/
-
 char Generate_Secret_Key_2()
 {
     srand(time(NULL));
@@ -26,35 +19,3 @@ const char* Generate_ds_Cipher(char str[], char key[] )
 
     return str;
 }
-
-/*int main()
-{
-    struct Box Mess;
-    char str[100];
-
-    printf("Enter the text message\n");
-    fgets(str,sizeof(str),stdin);
-
-    strcpy(Mess.text, str);
-
-    char key[100]; int i;
-    for(i=0; str[i]!='\0'; i++)
-    {    
-        key[i] = Generate_Secret_Key_2();
-    }
-    //key[i]='\0';
-    strcpy(Mess.sk2,key);
-
-    printf("Key 2 : %s\n",Mess.sk2);
-
-    strcpy(str, Generate_ds_Cipher(str, Mess.sk2));
-    printf("2nd Ecrypted text : %s\n",Mess.sk2);
-
-    strcpy(str,Generate_ds_Cipher(str, Mess.sk2));
-    printf("Generated Plain Text : %s\n", str);
-
-
-    _CrtDumpMemoryLeaks();
-
-    return 0;
-}*/
