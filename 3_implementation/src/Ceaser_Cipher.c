@@ -3,7 +3,7 @@
 #include<time.h>
 #include<string.h>
 
-/*struct Box
+/*struct Box            //This is no longer required; but was used while testing indivual program
 {
     char text[100];
     int sk1;
@@ -12,11 +12,11 @@
 
 int Generate_Secret_Key_1()
 {
-    srand(time(NULL));
-    return (rand()%10);
+    srand(time(NULL));      //This uses a the seconds that has passed from 1 January 1970 as the basis for the random number to be generated.
+    return (rand()%10);     //Since only one digit 1 required
 }
 
-const char* Generate_Ceaser_Cipher(char str[], int sk1)
+const char* Generate_Ceaser_Cipher(char str[], int sk1)     //Caesar cipher is done by substituting the current letter with another letter either to the right by 'n' letters or left by 'n' letters.
 {
     for(int i=0; str[i] != '\0'; i++)
     {
@@ -33,7 +33,7 @@ const char* Generate_Ceaser_Cipher(char str[], int sk1)
     return str;
 }
  
-const char* calculate_Ceaser_Plain_Text(char str[], int sk1)
+const char* calculate_Ceaser_Plain_Text(char str[], int sk1)    //Reverse of generation of the cipher.
 {
     for(int i=0; str[i] != '\0'; i++)
     {
