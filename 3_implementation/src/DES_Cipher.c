@@ -4,12 +4,12 @@
 #include<string.h>
 #include<crtdbg.h>
 
-struct Box
+/*struct Box
 {
     char text[100];
     int sk1;
     char sk2[100];
-};
+};*/
 
 char Generate_Secret_Key_2()
 {

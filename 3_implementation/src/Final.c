@@ -1,10 +1,11 @@
-#include "DES_Cipher.h"
-#include "Ceaser_Cipher.h"
+//#include "headers.h"
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 #include<string.h>
+
+#include "testFiles.h" 
 
 struct Box
 {
@@ -37,7 +38,7 @@ int main()
     //key[i]='\0';
     strcpy(Mess.sk2,key);
 
-    printf("Key 2 : %s\n",Mess.sk2);
+    printf("\nKey 2 : %s\n",Mess.sk2);
 
     strcpy(str, Generate_ds_Cipher(str, Mess.sk2));
     printf("2nd Ecrypted text : %s\n",str);
