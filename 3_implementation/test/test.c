@@ -1,23 +1,27 @@
 #include "unity.h"
-	#include "Ceaser_cipher.h"
-    #include "DES_Cipher.h"
+#include "Ceaser_cipher.h"
+#include "DES_Cipher.h"
 
-	void setUp()
-	{	}
-	void tearDown()
-	{	}
+int key1()
+{
+	int num1 = Generate_Secret_Key_1();
 	
-	void test(void)
-	{
-  		TEST_ASSERT_GREATER_OR_EQUAL(0,Generate_Secret_Key_1);
-  		//TEST_ASSERT_EQUAL(-30, sum(-50, 20));
-	}
+	if(num1>=0 && num<=9)
+		return 0;
+	return 1;
+}
 
-	int test_main(void)
-	{
-	  	UNITY_BEGIN();
-  	
-	  	RUN_TEST(test);
+int key2()
+{
+	if(Generate_Secret_Key_2())
+		return 0;
+	return 1;
+}
 
-  		return UNITY_END();
-	}
+void main()
+{
+	if(key1() == 0)
+		cout<<"Key 1 Generated\n";
+	if(key2() == 0)
+		cout<<"Key 2 Generated\n";
+}
